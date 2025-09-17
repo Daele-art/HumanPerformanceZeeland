@@ -24,17 +24,13 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'npm'
+          node-version: 20    # 👈 cache verwijderd
 
       - name: Install dependencies
         run: npm install
 
       - name: Build (Vite -> dist)
         run: npm run build
-
-      - name: List build output (debug)
-        run: ls -la ./dist
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
